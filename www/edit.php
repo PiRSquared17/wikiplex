@@ -31,7 +31,6 @@ $config = SimpleSAML_Configuration::getInstance('simplemultiwiki');
 session_start();
 
 
-
 include('../config/groups.php');
 
 
