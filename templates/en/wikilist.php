@@ -6,11 +6,22 @@
 
 	<p>Here is a list of existing wikis.</p>
 
-	<h2>Your own wikis</h2>
+	<h2>Your own wikis (<?php echo $this->data['user']; ?>)</h2>
 	
 	<dl>
-		<dt>testwiki</dt>
-		<dd>This is a test wiki. is it great or not?</dd>
+	<?php
+	
+		foreach ($this->data['listprivate'] AS $wiki) {
+			
+			echo '<dt>' . $wiki->getName() . '</dt>';
+			echo '<dd><p>' . $wiki->getDescr() . '</p>';
+			echo '<p>[ <a href="http://ow.feide.no/doku.php?id=' . $wiki->getIdentifier() . ':start">visit wiki</a> 
+			| <a href="edit.php?edit=' . $wiki->getIdentifier() . '">setup</a>
+			]</p></dd>';
+		}
+	
+	
+	?>
 	</dl>
 
 	
@@ -18,8 +29,20 @@
 	<h2>Public wikis</h2>
 	
 	<dl>
-		<dt>testwiki</dt>
-		<dd>This is a test wiki. is it great or not?</dd>
+	
+	<?php
+	
+		#print_r($this->data['listpublic']);
+		foreach ($this->data['listpublic'] AS $wiki) {
+			
+			echo '<dt>' . $wiki->getName() . '</dt>';
+			echo '<dd><p>' . $wiki->getDescr() . '</p>';
+			echo '<p>[ <a href="http://ow.feide.no/doku.php?id=' . $wiki->getIdentifier() . ':start">visit wiki</a> ]</p></dd>';
+		}
+	
+	
+	?>
+
 	</dl>
 	
 
