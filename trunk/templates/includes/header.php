@@ -3,7 +3,9 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="Content-Language" content="nb">
-	<link rel="stylesheet" type="text/css" href="http://feide.no/css/common/reset.css">
+	
+	<link rel="stylesheet" type="text/css" href="/resources/feide.css">
+	
 	<link rel="stylesheet" type="text/css" href="http://feide.no/css/uninettfeide/base.css">
 	<link rel="stylesheet" type="text/css" href="http://feide.no/css/uninettfeide/standard.css?v=1">
 	<link rel="stylesheet" type="text/css" href="http://feide.no/css/uninettfeide/feide.css">
@@ -14,7 +16,7 @@
 	<link rel="top" title="UNINETT" href="http://www.feide.no">
 	<link rel="parent" href="/content.ap?thisId=1200&amp;amp;language=0">
 	<link rel="glossary" href="/ordliste/">
-	<title>Hvordan få</title> 
+	<title>Feide Open Wiki</title> 
 </head>
 <body>
 <div id="Hovedmeny">

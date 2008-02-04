@@ -18,6 +18,7 @@ require_once('SimpleSAML/XHTML/Template.php');
  * Loading OpenWiki libraries*
  */
 require_once('../lib/OpenWiki.class.php');
+require_once('../lib/OpenWikiDictionary.class.php');
 
 /**
  * Initializating configuration
@@ -32,16 +33,51 @@ session_start();
 
 
 
+/* Load simpleSAMLphp, configuration and metadata */
+$sspconfig = SimpleSAML_Configuration::getInstance();
+$metadata = SimpleSAML_Metadata_MetaDataStorageHandler::getMetadataHandler();
+$session = SimpleSAML_Session::getInstance();
+
+/* Check if valid local session exists.. */
+if (!isset($session) || !$session->isValid('saml2') ) {
+	SimpleSAML_Utilities::redirect(
+		'/' . $sspconfig->getValue('baseurlpath') .
+		'saml2/sp/initSSO.php',
+		array('RelayState' => SimpleSAML_Utilities::selfURL())
+		);
+}
+$attributes = $session->getAttributes();
+
+$username = $attributes['eduPersonPrincipalName'][0];
+
+
 include('../config/groups.php');
 
 
-$username = 'andreas_solberg_uninett';
 
 
 
+$link = mysql_connect(
+	$config->getValue('db.host', 'localhost'), 
+	$config->getValue('db.user'),
+	$config->getValue('db.pass'));
+if(!$link){
+	throw new Exception('Could not connect to database: '.mysql_error());
+}
+mysql_select_db($config->getValue('db.name','feideopenwiki'));
+
+
+$owd = new OpenWikiDirectory($link);
+
+
+$list = $owd->getListPublic();
+$listprivate = $owd->getListOwner($username);
 
 $et = new SimpleSAML_XHTML_Template($config, 'wikilist.php');
 $et->data['header'] = 'List of wikis';
+$et->data['user'] = $username;
+$et->data['listpublic'] = $list;
+$et->data['listprivate'] = $listprivate;
 
 
 $et->show();

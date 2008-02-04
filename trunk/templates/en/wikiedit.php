@@ -23,8 +23,8 @@
 	<select name="access">
 	<?php
 		foreach ($this->data['taccess'] AS $code => $text) {
-			echo '<option ' . ($code === $this->data['access'] ? 'selected="selected"' : '') . 
-				' value="' . $code . '">' . $text . '</option>';
+			echo '<option ' . ($code == $this->data['access'] ? 'selected="selected" ' : '') . 
+				'value="' . $code . '">' . $text . '</option>';
 		}
 	?></select></p>
 
@@ -32,8 +32,8 @@
 	
 	<h2>Custom access control</h2>
 	
-	<table style="width: 100%">
-		<tr>
+	<table class="list" style="width: 100%">
+		<tr class="header">
 			<td>Type</td>
 			<td>Name</td>
 			<td>Access</td>

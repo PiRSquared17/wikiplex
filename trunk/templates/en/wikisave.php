@@ -8,7 +8,7 @@
 
 	<p>Your wiki<strong><?php echo $this->data['identifier']; ?></strong> is now successfully saved.</p>
 	
-	<p>[ <a href="index.php">List all wikis</a> | <a href="">Visit your <strong><?php echo $this->data['identifier']; ?></strong> wiki</a> ] </p>
+	<p>[ <a href="index.php">List all wikis</a> | <a href="https://ow.feide.no/doku.php?id=<?php echo $this->data['identifier']; ?>:start">Visit your <strong><?php echo $this->data['identifier']; ?></strong> wiki</a> ] </p>
 	
 	<p>Name: <?php echo $this->data['name']; ?></p>
 	<p>Description: <?php echo $this->data['descr']; ?></p>
