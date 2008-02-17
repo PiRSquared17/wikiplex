@@ -15,7 +15,7 @@
 			
 			echo '<dt>' . $wiki->getName() . '</dt>';
 			echo '<dd><p>' . $wiki->getDescr() . '</p>';
-			echo '<p>[ <a href="http://ow.feide.no/doku.php?id=' . $wiki->getIdentifier() . ':start">visit wiki</a> 
+			echo '<p>[ <a href="http://ow.feide.no/' . $wiki->getIdentifier() . ':start">visit wiki</a> 
 			| <a href="edit.php?edit=' . $wiki->getIdentifier() . '">setup</a>
 			]</p></dd>';
 		}
@@ -37,7 +37,7 @@
 			
 			echo '<dt>' . $wiki->getName() . '</dt>';
 			echo '<dd><p>' . $wiki->getDescr() . '</p>';
-			echo '<p>[ <a href="http://ow.feide.no/doku.php?id=' . $wiki->getIdentifier() . ':start">visit wiki</a> ]</p></dd>';
+			echo '<p>[ <a href="http://ow.feide.no/' . $wiki->getIdentifier() . ':start">visit wiki</a> ]</p></dd>';
 		}
 	
 	
