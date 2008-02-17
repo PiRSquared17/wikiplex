@@ -14,6 +14,11 @@ $groups = array(
 	'@affiliation-uninett.no-member' => 'Members of UNINETT',
 	'@orgunit-uninett.no-ou=SU_ou=TA_ou=UNINETT_ou=organization_dc=uninett_dc=no' => 'Systemutviklingsgruppa',
 	'@orgunit-uninett.no-ou=TA_ou=UNINETT_ou=organization_dc=uninett_dc=no' => 'Tjenesteavdelingen',
-	'@orgunitXouXUNINETTXSigmaXouXorganizationXdcXuninettXdcXnoXuninettXno' => 'Employees UNINETT Sigma',
-	'@feidecore' => 'Feide prosjektgruppe'
+	'@orgunit-uninett.no-ou=UNINETT_Sigma_ou=organization_dc=uninett_dc=no' => 'Employees UNINETT Sigma',
+	'@feidecore' => 'Feide prosjektgruppe',
+	'@realm-uio.no'	=> 'Everyone at UiO',
+	'@realm-ntnu.no'=> 'Everyone at NTNU',
+	'@realm-uit.no'	=> 'Everyone at UiT',
+	'@realm-uib.no'	=> 'Everyone at UiB',
+	'@entitlement-orphanage.dk_aai.dk-dk.dk_aai.orphanage.dev' => 'DK-AAI Utviklingsgruppe'
 );
