@@ -48,7 +48,14 @@ if (!isset($session) || !$session->isValid('saml2') ) {
 }
 $attributes = $session->getAttributes();
 
-$username = $attributes['eduPersonPrincipalName'][0];
+#$username = $attributes['eduPersonPrincipalName'][0];
+$username = 'na';
+if (isset($attributes['mail'])) {
+	$username = $attributes['mail'][0];
+}
+if (isset($attributes['eduPersonPrincipalName'])) {
+	$username = $attributes['eduPersonPrincipalName'][0];
+}
 
 
 include('../config/groups.php');
