@@ -18,7 +18,7 @@
 </head>
 <body>
 <div id="Hovedmeny">
-	<a href="/uninettfeide/" title="Feide" id="Feidelogo" rel="home" tabindex="50"></a> 
+	<a href="http://rnd.feide.no" title="Feide" id="Feidelogo" rel="home" tabindex="50"></a> 
 <!-- menystart -->
 	<ul>
 		<li class="dybde1">
